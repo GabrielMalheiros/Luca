@@ -3,10 +3,9 @@
   --bg-alt: #141414;
   --bg-deep: #000000;
   --text-main: #f5f5f5;
-  --accent: #c2a46d; /* bege / dourado fosco */
+  --accent: #c2a46d;
 }
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +24,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* TIPOGRAFIA */
 h1, h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -50,7 +48,6 @@ p {
   font-weight: 500;
 }
 
-/* HERO */
 .hero {
   position: relative;
   height: 100vh;
@@ -97,7 +94,6 @@ p {
   max-width: 600px;
 }
 
-/* SEÇÕES */
 .section {
   padding: 120px 10%;
 }
@@ -110,7 +106,6 @@ p {
   background: var(--bg-deep);
 }
 
-/* LAYOUTS */
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -128,7 +123,6 @@ p {
   text-align: center;
 }
 
-/* IMAGENS */
 .image-block {
   width: 100%;
   height: 500px;
@@ -142,61 +136,19 @@ p {
   display: block;
 }
 
-.section-image {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  margin: 40px 0;
-  display: block;
-}
-
-/* GALERIA */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
-
-/* LOGOS */
-.logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.logos img {
-  max-width: 160px;
-  max-height: 80px;
-  object-fit: contain;
-  opacity: 0.85;
-  filter: grayscale(100%);
-}
-
-/* FOOTER */
 .footer {
   padding: 100px 10%;
   text-align: center;
   background: var(--bg-deep);
 }
 
-.final-quote {
+.footer p {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   margin: 0 auto 40px auto;
   max-width: 700px;
   text-align: center;
 }
-
 
 .social a {
   color: var(--text-main);
@@ -211,7 +163,6 @@ p {
   color: var(--accent);
 }
 
-/* RESPONSIVO */
 @media (max-width: 1024px) {
   h1 {
     font-size: 3rem;
@@ -227,8 +178,7 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .image-block,
-  .section-image {
+  .image-block {
     height: 320px;
   }
 
@@ -254,7 +204,19 @@ p {
     font-size: 1.05rem;
   }
 
-  .final-quote {
+  .footer p {
     font-size: 1.3rem;
   }
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
 }

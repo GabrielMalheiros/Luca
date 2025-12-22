@@ -34,7 +34,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 40px;
 }
 
@@ -42,10 +42,6 @@ p {
   max-width: 700px;
   margin-bottom: 24px;
   font-size: 1rem;
-}
-
-.emphasis {
-  font-weight: 500;
 }
 
 .hero {
@@ -60,12 +56,13 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 40%;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.65);
 }
 
 .hero-content {
@@ -80,18 +77,27 @@ p {
   padding: 0 20px;
 }
 
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
 .subtitle {
-  margin-top: 12px;
+  margin-top: 2px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: var(--accent);
 }
 
 .hero-quote {
-  margin-top: 40px;
+  margin-top: 3px;
   font-size: 1.2rem;
   max-width: 600px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .section {
@@ -111,10 +117,12 @@ p {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
+  margin-bottom: 80px;
 }
 
 .narrow {
   max-width: 700px;
+  margin: 0 auto;
 }
 
 .centered-text {
@@ -125,8 +133,9 @@ p {
 
 .image-block {
   width: 100%;
-  height: 500px;
+  height: 600px;
   overflow: hidden;
+  margin: 40px 0;
 }
 
 .image-block img {
@@ -134,6 +143,79 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.highlight {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para a seção COLLABORAZIONI E PROGETTI */
+.section.light {
+  background: var(--bg-alt);
+  padding: 80px 10%;
+}
+
+.centered-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.narrow {
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+.narrow p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.emphasis i{
+   color: var(--accent);
+}
+
+/* Galeria com 4 imagens organizadas */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* Ajusta a imagem para cobrir a área sem distorcer */
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar as imagens */
+}
+
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Para telas menores, 2 imagens por linha */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr; /* Para dispositivos móveis, 1 imagem por linha */
+  }
 }
 
 .footer {
@@ -147,7 +229,6 @@ p {
   font-size: 1.5rem;
   margin: 0 auto 40px auto;
   max-width: 700px;
-  text-align: center;
 }
 
 .social a {
@@ -161,62 +242,4 @@ p {
 
 .social a:hover {
   color: var(--accent);
-}
-
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 3rem;
-  }
-
-  .section {
-    padding: 100px 8%;
-  }
-}
-
-@media (max-width: 900px) {
-  .split {
-    grid-template-columns: 1fr;
-  }
-
-  .image-block {
-    height: 320px;
-  }
-
-  .hero {
-    height: 90vh;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .section {
-    padding: 80px 6%;
-  }
-
-  .hero-quote {
-    font-size: 1.05rem;
-  }
-
-  .footer p {
-    font-size: 1.3rem;
-  }
-}
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
 }

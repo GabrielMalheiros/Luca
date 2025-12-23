@@ -401,6 +401,7 @@ h2 {
 
 @media (max-width: 1024px) {
 
+  .hero-img, .progetti { opacity:65%;}
   .section {
     padding: 80px 6%;
   }
@@ -429,3 +430,4 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+

@@ -144,18 +144,18 @@ h1 {
 
 .image-block {
   width: 100%;
-  height: 600px;
+  height: auto; /* Deixa a altura seguir a proporção da imagem */
+  max-height: 600px; /* Limita o tamanho em telas grandes para não ficar gigante */
   overflow: hidden;
   margin: 40px 0;
 }
 
 .image-block img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* Garante que a imagem mantenha a proporção */
   display: block;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  object-fit: contain; /* Opcional: mostra a imagem toda mesmo que sobre espaço nas laterais */
 }
 
 .highlight {
@@ -249,13 +249,12 @@ h2 {
 
 .gallery img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: auto; /* A altura se ajusta à largura da coluna */
+  aspect-ratio: 1 / 1; /* Opcional: mantém todas as fotos como quadrados perfeitos sem cortar */
+  object-fit: cover; /* Se usar aspect-ratio, o cover é necessário para não distorcer */
   display: block;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar as imagens */
 }
-
 
 
 
@@ -415,11 +414,10 @@ h2 {
 }
 
 .image-block {
-        /* Reduzimos a altura para que a imagem não precise "esticar" tanto */
-        height: 350px !important; 
-        margin: 20px 0;
-        width: 100%;
-    }
+    height: auto !important; /* Remove a altura fixa de 350px */
+    margin: 20px 0;
+    width: 100%;
+}
 
     .image-block img {
         width: 100%;

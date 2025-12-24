@@ -280,7 +280,7 @@ h2 {
 
 .footer {
   background: var(--bg-deep);
-  height: 30vh;
+  height: 41vh;
   text-align: center;
   padding: 20px;
 }
@@ -290,35 +290,47 @@ h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   margin: 10px auto 20px auto;
-  max-width: 700px;
+  max-width: 1000px;
   
 }
-.social{
-  display: flex;
-  align-items: center;
-  justify-content:center;
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: nowrap; /* Garante que nunca quebre para a linha de baixo */
+}
+
+.logo {
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #222;
+    flex-shrink: 0; /* Impede que a logo fique "esmagada" */
 }
 
 .social a {
-  color: var(--text-main);
   text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-  text-align: center;
-  margin: 0 6px;
-  width: 5%;
-  height: 33%;
+  font-size: 50px; /* Aumentado para 50px para dar o peso visual da imagem */
+  color: #888; /* Cor cinza clara (similar à da imagem) */
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
-
+/* Efeito de cor e leve aumento ao passar o mouse */
 .social a:hover {
-  color: var(--accent);
+  transform: scale(1.1);
 }
-.logo{
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+
+.social a:hover .fa-instagram {
+  color: #E1306C;
+}
+
+.social a:hover .fa-youtube {
+  color: #FF0000;
 }
 @media (max-width: 768px) {
     /* 1. Ajuste de textos e títulos */
@@ -387,17 +399,18 @@ h2 {
     }
 
     .social {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row; /* Força a manter lado a lado */
+        gap: 15px;           /* Reduz um pouco o espaço entre eles */
     }
 
     .social a {
-        width: auto;
-        font-size: 1rem;
+        font-size: 40px;     /* Ícones diminuem de 50px para 40px */
     }
 
     .logo {
-        margin-top: 20px;
+        height: 90px;        /* Logo diminui de 110px para 90px */
+        width: 90px;
+        margin-top: 0;       /* Remove a margem superior que você tinha antes */
     }
 }
 
@@ -421,6 +434,19 @@ h2 {
 @media (max-width: 480px) {
     .gallery {
         grid-template-columns: 1fr; /* 1 foto por linha se for muito pequeno */
+    }
+
+    .social {
+        gap: 10px;           /* Espaço mínimo entre os elementos */
+    }
+
+    .social a {
+        font-size: 35px;     /* Ícones menores para caber no celular */
+    }
+
+    .logo {
+        height: 75px;        /* Logo menor para celulares pequenos */
+        width: 75px;
     }
     
     h1 { font-size: 2rem; }

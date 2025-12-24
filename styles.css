@@ -12,6 +12,7 @@
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
@@ -43,38 +44,46 @@ p {
   margin-bottom: 24px;
   font-size: 1rem;
 }
-
 .hero {
   position: relative;
-  height: 100vh;
+  /* min-height: 100vh garante que ocupe a tela toda, 
+     mas permite que o container cresça se o texto for grande 
+  */
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  padding: 20px; /* Margem de segurança para telas pequenas */
 }
 
-.hero-img, .progetti {
+.hero-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity:15%;
+  opacity: 0.15; /* Mantendo sua opacidade original */
+  z-index: 1;
 }
 
-.hero-overlay,.progetti-overlay {
+.hero-overlay, .progetti-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  height: 100%;
+  width: 100%;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 20px;
 }
 
 h1 {
@@ -158,18 +167,21 @@ h1 {
 }
 
 .galeria{
-  height: 130vh!important;
+  height: auto !important; 
+    padding: 100px 10% 120px 10% !important; /* Aumentamos o respiro inferior */
+    display: block;
 }
 
 /* Estilo para a seção COLLABORAZIONI E PROGETTI */
+/* Procure esta parte e deixe assim: */
 .section.light.split {
   padding: 80px 10%;
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh; /* Alterado de height para min-height */
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Remova o overflow: hidden; se ele estiver aqui */
 }
 
 
@@ -307,4 +319,109 @@ h2 {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+}
+@media (max-width: 768px) {
+    /* 1. Ajuste de textos e títulos */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .hero-quote { font-size: 1.1rem; }
+
+    /* 2. Empilhamento das colunas (Split) */
+    .split {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    /* Inverte a ordem no "Percorso Artistico" para a imagem não sumir */
+    .section.split.alterar {
+        flex-direction: column-reverse;
+    }
+
+    /* 3. Correção da Galeria (2 colunas no mobile) */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    .gallery img {
+        height: 180px; /* Altura menor para as fotos na grade */
+    }
+
+    .galeria {
+        padding-bottom: 80px !important; /* Espaço extra antes do footer */
+    }
+
+    /* 4. Colaborazioni e Progetti (Vídeo e Piano) */
+    /* Substitua a regra atual por esta: */
+.section.light.split {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto !important; /* Força a altura a se ajustar ao conteúdo */
+    padding: 60px 5% !important; /* Dá mais espaço nas laterais */
+}
+
+/* Adicione isso para garantir que o texto não fique colado */
+.pianotext {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+    .pianocentered {
+        margin-bottom: 30px;
+    }
+
+    .video {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 300px; /* Mantém o vídeo em um tamanho elegante */
+    }
+
+    /* 5. Footer (Rodapé) */
+    .footer {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .social {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .social a {
+        width: auto;
+        font-size: 1rem;
+    }
+
+    .logo {
+        margin-top: 20px;
+    }
+}
+
+.image-block {
+        /* Reduzimos a altura para que a imagem não precise "esticar" tanto */
+        height: 350px !important; 
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .image-block img {
+        width: 100%;
+        height: 100%;
+        /* O 'cover' garante que a proporção se mantenha */
+        object-fit: cover; 
+        /* O 'center' garante que o Luca (ou o assunto principal) fique no meio */
+        object-position: center; 
+    }
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 foto por linha se for muito pequeno */
+    }
+    
+    h1 { font-size: 2rem; }
 }

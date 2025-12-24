@@ -10,7 +10,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border-style: double;
 }
 
 html {
@@ -181,6 +180,29 @@ h1 {
   margin-bottom: 40px;
 }
 
+.pianocentered{
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
+  max-width: 600px;     /* 🔑 MUITO IMPORTANTE */
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.pipi{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.pianotext{
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
+}
+
 h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
@@ -222,43 +244,8 @@ h2 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar as imagens */
 }
 
-.footer {
-  background: var(--bg-deep);
-  height: 30vh;
-  text-align: center;
-}
 
-.footer p {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-   margin: 0 auto 40px auto;
-  max-width: 700px;
-  
-}
 
-.social a {
-  color: var(--text-main);
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-.social{
-  display: flex;
-  align-items: center;
-
-  justify-content: center;
-}
-
-.social a:hover {
-  color: var(--accent);
-}
-.social a{
-  text-align: center;
-  width: 5%;
-  height: 33%;
-}
 
 .section.split .image-block img {
   width: 100%;
@@ -267,179 +254,57 @@ h2 {
   border-radius: 10px;
 }
 
+
+
+.piano{
+  width: 120px;        /* escolha o tamanho */
+  height: 120px;       /* igual à largura */
+  border-radius: 50%;
+  object-fit: cover;   /* mantém o corte correto */
+  display: block;
+  max-width: 120px;
+  opacity: 0.9;
+}
+
+.footer {
+  background: var(--bg-deep);
+  height: 30vh;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.footer p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin: 10px auto 20px auto;
+  max-width: 700px;
+  
+}
+.social{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.social a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  text-align: center;
+  margin: 0 6px;
+  width: 5%;
+  height: 33%;
+}
+
+
+.social a:hover {
+  color: var(--accent);
+}
 .logo{
   width: 70px;
   height: 70px;
   border-radius: 50%;
-}
-
-
-
-
-
-
-@media (max-width: 480px) {
-
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .hero-quote {
-    font-size: 0.95rem;
-  }
-
-  .image-block {
-    height: 300px;
-  }
-
-  .percorso-grid img:first-child {
-    height: 240px;
-  }
-
-  .percorso-grid img {
-    height: 160px;
-  }
-
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery img {
-    height: 220px;
-  }
-
-  .social a {
-    display: inline-block;
-    margin: 10px;
-  }
-}
-
-
-@media (max-width: 768px) {
-
-  /* HERO */
-  .hero {
-    height: 90vh;
-  }
-
-  h1 {
-    font-size: 2.6rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-  }
-
-  .hero-quote {
-    font-size: 1rem;
-  }
-
-  /* SEÇÕES */
-  .section {
-    padding: 70px 6%;
-  }
-
-  .split {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .text p {
-    font-size: 0.95rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .alterar{
-    background-color: #000000!important;
-  }
-
-  /* IMAGENS */
-  .image-block {
-    height: 380px;
-    margin: 20px 0;
-  }
-
-  /* PERCORSO ARTISTICO */
-  .percorso-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    height: auto;
-  }
-
-  .percorso-grid img:first-child {
-    grid-column: 1 / -1;
-    height: 300px;
-  }
-
-  .percorso-grid img {
-    height: 180px;
-  }
-
-  /* COLLABORAZIONI */
-  .section.light {
-    height: auto;
-    padding: 100px 6%;
-  }
-
-  .narrow p {
-    font-size: 1rem;
-  }
-
-  /* GALERIA */
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gallery img {
-    height: 200px;
-  }
-
-  /* FOOTER */
-  .footer {
-    padding: 80px 6%;
-  }
-
-  .footer p {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 1024px) {
-
-  .hero-img, .progetti { opacity:65%;}
-  .section {
-    padding: 80px 6%;
-  }
-
-  .split {
-    gap: 40px;
-  }
-
-  h1 {
-    font-size: 3.2rem;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-  }
-
-  .image-block {
-    height: 450px;
-  }
-
-  .percorso-grid {
-    height: 450px;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

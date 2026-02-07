@@ -10,10 +10,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 
   <link rel="stylesheet" href="styles.css" />
 </head>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <body>
 
   <!-- HERO -->
@@ -90,6 +93,32 @@
     <p>Un'esperienza che ha segnato un punto di svolta, in cui la strada, il palco e l'identità artistica si sono allineati.</p>
     <p>Questo ha trasformato l'esposizione televisiva in un momento di consapevolezza e direzione.</p>
   </div>
+
+  <!-- Galeria -->
+<div class="galeria-container">
+  <div class="swiper minhaGaleria">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <img src="images\gl1.jpg" alt="foto 1">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images\gl2.jpg" alt="foto 2">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images\gl3.jpg" alt="foto 3">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images\gl4.jpg" alt="foto 4">
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
  </section>
   <!-- LA MUSICA E LA MIA STORIA -->
@@ -195,4 +224,21 @@
   </footer>
 
 </body>
+<script>
+const swiper = new Swiper(".minhaGaleria", {
+  loop: true,
+
+  autoplay: {
+    delay: 1500, // 1.5 segundos
+    disableOnInteraction: false,
+  },
+
+  speed: 900,
+
+  slidesPerView: 1,
+  spaceBetween: 10,
+
+});
+</script>
+
 </html>

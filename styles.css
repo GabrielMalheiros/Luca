@@ -71,7 +71,7 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 70%; /* Mantendo sua opacidade original */
+  opacity: 20%; /* Mantendo sua opacidade original */
   z-index: 1;
 }
 
@@ -260,6 +260,16 @@ h2 {
   display: block;
   border-radius: 10px;
 }
+
+.gallery video {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  background: black;
+}
+
 
 
 
